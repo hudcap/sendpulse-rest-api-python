@@ -446,7 +446,7 @@ class PySendPulse:
             return self.__handle_error('Seems you not pass addressbook ID')
         if not attachments:
             attachments = {}
-        return self.__handle_result(self.__send_request('campaigns', 'POST', {
+        return self.__send_request('campaigns', 'POST', {
             'sender_name': from_name,
             'sender_email': from_email,
             'subject': subject,
@@ -454,7 +454,7 @@ class PySendPulse:
             'list_id': addressbook_id,
             'name': campaign_name,
             'attachments': json.dumps(attachments)
-        }))
+        })
 
     def cancel_campaign(self, id):
         """ Cancel campaign
