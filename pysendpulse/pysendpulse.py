@@ -145,7 +145,6 @@ class PySendPulse:
             headers = {}
         # if use_json_content_type and params:
         headers['Content-Type'] = 'application/json'
-        params = json.dumps(params)
 
         if method == "POST":
             response = requests.post(url, headers=headers, data=params)
