@@ -147,11 +147,11 @@ class PySendPulse:
         headers['Content-Type'] = 'application/json'
 
         if method == "POST":
-            response = requests.post(url, headers=headers, data=params)
+            response = requests.post(url, headers=headers, json=params)
         elif method == "PUT":
-            response = requests.put(url, headers=headers, data=params)
+            response = requests.put(url, headers=headers, json=params)
         elif method == "DELETE":
-            response = requests.delete(url, headers=headers, data=params)
+            response = requests.delete(url, headers=headers, json=params)
         else:
             response = requests.get(url, headers=headers, params=params)
         if response.status_code == 401 and self.__refresh_token == 0:
